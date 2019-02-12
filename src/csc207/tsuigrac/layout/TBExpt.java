@@ -40,11 +40,14 @@ public class TBExpt {
   */
     TextLine tb1 = new TextLine("Hello");
     TextLine tb2 = new TextLine("World");
-    TextBlock compound = new CenteredBlock(tb1, 15);
+    TextBlock compound = new BoxedBlock(new CenteredBlock(new BoxedBlock(new CenteredBlock(new VComposition(tb1, tb2), 7)), 15));
     pen.println("ORIGINAL");
     TBUtils.print(pen, compound);
-    tb1.setContents("Someone");
+    tb2.setContents("Someone");
     pen.println("UPDATED");
+    TBUtils.print(pen, compound);
+    tb1.setContents("Nice to meet you,");
+    pen.println("RE-UPDATED");
     TBUtils.print(pen, compound);
     // Clean up after ourselves.
     pen.close();

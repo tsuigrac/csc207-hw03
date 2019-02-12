@@ -11,8 +11,6 @@ public class CenteredBlock implements TextBlock {
   }
   
   public int width() {
-    int addWidth = this.line.width() - this.width;
-    this.width = this.width + addWidth;
     return this.width;
   }
   
@@ -22,16 +20,16 @@ public class CenteredBlock implements TextBlock {
   
   public String row(int i) throws Exception {
     String word = " "; 
-    
-    if(this.width() < line.width()) {
+    int boxWidth = this.width;
+    if(boxWidth < this.line.width()) {
       throw new Exception("Invalid row " + i);
-    }else if(this.width() == line.width()) {
-      word = line.row(i);
+    }else if(boxWidth== this.line.width()) {
+      word = this.line.row(i);
     }else {
-      int spaceLength = (this.width() - line.width())/2 ;
+      int spaceLength = (boxWidth - this.line.width())/2 ;
       String firstSpaces = TBUtils.spaces(spaceLength);
       String secondSpaces = firstSpaces;
-      word = (firstSpaces.concat(line.row(i))).concat(secondSpaces); 
+      word = (firstSpaces.concat(this.line.row(i))).concat(secondSpaces); 
     }
     return word;
   }
