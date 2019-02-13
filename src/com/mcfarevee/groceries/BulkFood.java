@@ -29,6 +29,11 @@ public class BulkFood{
     return this.supply;
   }
   
+  public boolean equals(BulkFood other) {
+    return this.name.equals(other.name) && this.unit.equals(other.unit) 
+        && this.pricePerUnit == other.pricePerUnit && this.supply == other.supply;
+  }
+  
   }
   
 

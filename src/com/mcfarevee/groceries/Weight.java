@@ -16,4 +16,8 @@ public class Weight {
   public Unit getUnit() {
     return this.unit;
   }
+  
+  public boolean equals(Weight other) {
+    return this.unit.equals(other.unit) && this.amount == other.amount;
+  }
 }

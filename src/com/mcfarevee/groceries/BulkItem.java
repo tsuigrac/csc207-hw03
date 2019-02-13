@@ -12,7 +12,11 @@ public class BulkItem implements Item{
   }
   
   public String toString() {
-    return amount + " " + unit.name + " of " + food.name; 
+    if (amount == 1) {
+      return amount + " " + unit.name + " of " + food.name; 
+    } else {
+      return amount + " " + unit.plural + " of " + food.name; 
+    }
   }
   
   //Are we supposed to return a weight object (and how do we do that)
@@ -26,8 +30,8 @@ public class BulkItem implements Item{
   }
   
   public  boolean equals(BulkItem item) {
-    return (this.unit == item.unit && this.amount == item.amount 
-        && this.food == item.food);
+    return (this.unit.equals(item.unit) && this.amount == item.amount 
+        && this.food.equals(item.food));
         
   }
 

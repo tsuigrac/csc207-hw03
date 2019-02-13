@@ -10,12 +10,10 @@ public class ManyPackages implements Item{
   }
   @Override
   public Weight getWeight() {
-    // TODO Auto-generated method stub
     return new Weight(type.weight.unit, type.weight.amount * count);
   }
   @Override
   public int getPrice() {
-    // TODO Auto-generated method stub
     return count * type.price;
   } 
   
@@ -23,7 +21,7 @@ public class ManyPackages implements Item{
     return other == this;
   }
   public String toString() {
-    return this.count + "x" + this.type.weight.amount + " " + this.type.weight.unit.name + " " + "package of " +
+    return this.count + "x" + this.type.weight.amount + " " + this.type.weight.unit.abbrev + " " + "package of " +
   this.type.name;
   }
 }

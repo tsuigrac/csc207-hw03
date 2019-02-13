@@ -62,6 +62,10 @@ public class Unit {
   public String plural() {
     return this.plural;
   } // plural
+  
+  public boolean equals(Unit unit) {
+    return this.name.equals(unit.name);
+  }
 
   // +-----------+---------------------------------------------------
   // | Constants |
