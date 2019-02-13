@@ -1,10 +1,10 @@
 package com.mcfarevee.groceries;
 
 public class BulkFood{
-  String name;
-  Unit unit;
-  int pricePerUnit;
-  int supply;
+  private String name;
+  private Unit unit;
+  private int pricePerUnit;
+  private int supply;
   
   public BulkFood(String name, Unit unit, int pricePerUnit, int supply) {
     this.name = name;

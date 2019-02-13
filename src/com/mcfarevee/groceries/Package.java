@@ -1,9 +1,9 @@
 package com.mcfarevee.groceries;
 
 public class Package implements Item {
-  String name;
-  Weight weight;
-  int price;
+  private String name;
+  private Weight weight;
+  private int price;
 
   public Package(String name, Weight weight, int price) {
     this.name = name;
@@ -12,12 +12,16 @@ public class Package implements Item {
   }
 
   public Weight getWeight() {
-    return weight;
+    return this.weight;
   }
 
 
   public int getPrice() {
-    return price;
+    return this.price;
+  }
+  
+  public String getName() {
+    return this.name;
   }
 
   public boolean equals(Package other) {
@@ -26,6 +30,6 @@ public class Package implements Item {
   }
 
   public String toString() {
-    return weight.amount + " "+ weight.unit.abbrev + " " + "package of " + name + ".";
+    return weight.getAmount() + " "+ weight.getUnit().abbrev + " " + "package of " + name;
   }
 }

@@ -2,9 +2,9 @@ package com.mcfarevee.groceries;
 
 public class NonFood implements Item{
 
-  String name; 
-  Weight weight; 
-  int price; 
+  private String name; 
+  private Weight weight; 
+  private int price; 
   
   public NonFood(String name, Weight weight, int price) {
     this.name = name;
@@ -27,5 +27,9 @@ public class NonFood implements Item{
   
   public String toString() {
     return name; 
+  }
+  
+  public String getName() {
+    return this.name;
   }
 }

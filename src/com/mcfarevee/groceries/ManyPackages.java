@@ -1,8 +1,8 @@
 package com.mcfarevee.groceries;
 
 public class ManyPackages implements Item{
-  Package type; 
-  int count;
+  private Package type; 
+  private int count;
   
   public ManyPackages(Package type, int count) {
     this.type = type; 
@@ -10,18 +10,33 @@ public class ManyPackages implements Item{
   }
   @Override
   public Weight getWeight() {
-    return new Weight(type.weight.unit, type.weight.amount * count);
+    return new Weight(type.getWeight().getUnit(), type.getWeight().getAmount() * count);
   }
   @Override
   public int getPrice() {
-    return count * type.price;
+    return count * type.getPrice();
   } 
+  
+  public Package getType() {
+    return this.type;
+  }
   
   public boolean equals(ManyPackages other) {
     return other == this;
   }
   public String toString() {
-    return this.count + "x" + this.type.weight.amount + " " + this.type.weight.unit.abbrev + " " + "package of " +
-  this.type.name;
+    return this.count + " x " + this.type.getWeight().getAmount() + " " + 
+        this.type.getWeight().getUnit().abbrev + " " + "package of " +
+        this.type.getName();
   }
+  
+  public int getCount() {
+    return this.count;
+  }
+  
+  public String getName() {
+    return this.type.getName();
+  }
+  
+  
 }

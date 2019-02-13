@@ -1,12 +1,16 @@
 package com.mcfarevee.groceries;
 
 public class Weight {
-  Unit unit;
-  int amount;
+  private Unit unit;
+  private int amount;
   
   public Weight (Unit unit, int amount) {
     this.unit = unit;
     this.amount = amount;
+  }
+  
+  public void addAmount(int amount) {
+    this.amount += amount;
   }
   
   public int getAmount() {

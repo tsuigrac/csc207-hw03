@@ -1,9 +1,9 @@
 package com.mcfarevee.groceries;
 
 public class BulkItem implements Item{
-  Unit unit;
-  int amount;
-  BulkFood food;
+  private Unit unit;
+  private int amount;
+  private BulkFood food;
   
   public BulkItem(BulkFood food, Unit unit, int amount) {
     this.unit = unit;
@@ -13,20 +13,18 @@ public class BulkItem implements Item{
   
   public String toString() {
     if (amount == 1) {
-      return amount + " " + unit.name + " of " + food.name; 
+      return amount + " " + unit.name + " of " + food.getName(); 
     } else {
-      return amount + " " + unit.plural + " of " + food.name; 
+      return amount + " " + unit.plural + " of " + food.getName(); 
     }
   }
   
-  //Are we supposed to return a weight object (and how do we do that)
-  //or just the amount?
   public Weight getWeight() {
     return new Weight(unit, amount);
   }
 
   public int getPrice() {
-    return this.amount * food.pricePerUnit;
+    return this.amount * food.getPricePerUnit();
   }
   
   public  boolean equals(BulkItem item) {
@@ -34,5 +32,8 @@ public class BulkItem implements Item{
         && this.food.equals(item.food));
         
   }
-
+  
+  public String getName() {
+    return this.food.getName();
+  }
 }
