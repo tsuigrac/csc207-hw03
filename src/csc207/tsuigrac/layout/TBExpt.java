@@ -37,7 +37,7 @@ public class TBExpt {
     TBUtils.print(pen, block4);
     TextBlock blockPair = new BlockPair(block4);
     TBUtils.print(pen, blockPair);
-  */
+  
     TextLine tb1 = new TextLine("Hello");
     TextLine tb2 = new TextLine("World");
     TextBlock compound = new BoxedBlock(new CenteredBlock(new BoxedBlock(new CenteredBlock(new VComposition(tb1, tb2), 7)), 15));
@@ -49,6 +49,14 @@ public class TBExpt {
     tb1.setContents("Nice to meet you,");
     pen.println("RE-UPDATED");
     TBUtils.print(pen, compound);
+    */
+    TextLine tb1 = new TextLine("Hello");
+    TextLine tb2 = new TextLine("World");
+    TextBlock vert = new VComposition(tb1, tb2);
+    TextBlock right = new RightJustified(vert, 6);
+    tb2.setContents("Helloo");
+    TBUtils.print(pen, right);
+    
     // Clean up after ourselves.
     pen.close();
   } // main(String[])

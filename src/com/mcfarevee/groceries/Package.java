@@ -32,4 +32,8 @@ public class Package implements Item {
   public String toString() {
     return weight.getAmount() + " "+ weight.getUnit().abbrev + " " + "package of " + name;
   }
+  
+  public void addPrice(int price) {
+    this.price += price;
+  }
 }

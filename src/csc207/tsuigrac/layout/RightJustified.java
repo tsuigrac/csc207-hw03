@@ -23,11 +23,14 @@ public class RightJustified implements TextBlock {
 
   public String row(int i) throws Exception {
     String result = this.contents.row(i);
-    int length = result.length();
-    if(length < this.width) {
+    int length = this.contents.row(i).length();
+    if(length > this.width) {
+      System.out.println("Error");
+      throw new Exception("Length too long");
+    }else{
       for(int j = 0; j < this.width - length; j++) {
         result = " ".concat(result);
-      }
+      } 
     }
     return result;
   }

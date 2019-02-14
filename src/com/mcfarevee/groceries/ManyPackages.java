@@ -38,5 +38,9 @@ public class ManyPackages implements Item{
     return this.type.getName();
   }
   
+  public void addCount(int count) {
+    this.count += count;
+  }
+  
   
 }

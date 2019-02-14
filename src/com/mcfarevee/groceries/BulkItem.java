@@ -30,10 +30,13 @@ public class BulkItem implements Item{
   public  boolean equals(BulkItem item) {
     return (this.unit.equals(item.unit) && this.amount == item.amount 
         && this.food.equals(item.food));
-        
   }
   
   public String getName() {
     return this.food.getName();
+  }
+  
+  public void addAmount(int amount) {
+    this.amount += amount;
   }
 }
