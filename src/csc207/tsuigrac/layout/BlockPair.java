@@ -12,14 +12,25 @@ public class BlockPair implements TextBlock {
   // +--------------+------------------------------------------------------
   // | Constructors |
   // +--------------+
-
+  /**
+   * @param contents, a TextBlock
+   * 
+   * Sets the width of the BlockPair to double the width of the
+   * longest string in the original TextBlock
+   *
+   */
   public BlockPair(TextBlock _contents) {
     this.contents = _contents;
     this.width = this.contents.width() * 2;
   }
 
 
-
+  /**
+   * @param i, the row number
+   * 
+   * @return the original string concatenated with itself once
+   *
+   */
   public String row(int i) throws Exception {
     String original = this.contents.row(i);
     String pair = original.concat(original);
